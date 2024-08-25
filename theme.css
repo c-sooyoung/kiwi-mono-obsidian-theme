@@ -62,7 +62,7 @@
 }
 
 .markdown-preview-view {
-    --font-text-size: 1.2rem;
+    /* --font-text-size: 1.2rem; */
     --font-text: var(--font-text-override), 'CMU Serif', serif;
     --font-monospace: var(--font-monospace-override), 'CMU Typewriter Text', monospace;
 
@@ -79,9 +79,9 @@
     --line-height-condensed: 1.3;
     --p-spacing: 1rem;
 
-    --file-line-width: 80%;
+    --file-line-width: 80ch;
 
-    text-align: justify;
+    /* text-align: justify; */
 }
 
 .markdown-source-view.mod-cm6.is-readable-line-width .cm-sizer {
@@ -139,9 +139,14 @@
     margin-top: 0;
 }
 
-/* .markdown-preview-view div + div > :is(h1,h2,h3,h4,h5,h6) {
-    margin-top: calc(2 * var(--p-spacing));
-} */
+body {
+    --heading-spacing: var(--p-spacing);
+}
+
+/* markdown-preview-view div + div > :is(h1,h2,h3,h4,h5,h6) { */
+    /* margin-top: calc(2 * var(--p-spacing)); */
+/* } */
+
 /*.markdown-preview-view div:has( > :is(p,pre,table,ul,ol)) + div > :is(h3,h4,h5,h6) {
     margin-top: var(--p-spacing);
 }*/
@@ -311,8 +316,10 @@
     /* --link-external-decoration-hover: none */
 }
 
+/* remove external link marker */
 .external-link {
-	display: none;
+    background-image: none;
+    padding-inline-end: 0;
 }
 
 
@@ -398,10 +405,14 @@
     --background-secondary-alt: var(--background-primary);
 }
 
-/* left sidebar */
+/* dividers */
 body {
     --indentation-guide-width: 0px;
     --divider-color: transparent;
+}
+
+.workspace-leaf-resize-handle {
+    --divider-color: var(--color-base-35);
 }
 
 /* tab bar */
