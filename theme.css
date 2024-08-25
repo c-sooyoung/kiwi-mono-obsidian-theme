@@ -1,34 +1,456 @@
-body {
-	--radius-s: 0px;
-	--radius-m: 0px;
-	--radius-l: 0px;
-	--input-radius: 0px;
-	--tab-radius-active: 0px;
-	--checkbox-radius: 0px;
-	--toggle-radius: 0px;
-	--toggle-thumb-radius: 0px;
-	--slider-thumb-radius: 0px;
+/* kiwi mono */
+/* theme for obsidian.md */
+
+/******************************** Colors ********************************/
+
+.theme-light {
+    --accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+    /* --accent: #85bb65; */
+
+    --accent-tint-1: color-mix(in lch, var(--accent), hsl(var(--accent-h), var(--accent-s), 95%) 30%);
+    --accent-tint-2: color-mix(in lch, var(--accent), hsl(var(--accent-h), var(--accent-s), 95%) 50%);
+    --accent-tint-3: color-mix(in lch, var(--accent), hsl(var(--accent-h), var(--accent-s), 95%) 80%);
+    --accent-tint-4: color-mix(in lch, var(--accent), hsl(var(--accent-h), var(--accent-s), 95%) 90%);
+    --accent-shade-1: color-mix(in lch, var(--accent), hsl(var(--accent-h), var(--accent-s), 10%) 20%);
+    --accent-shade-2: color-mix(in lch, var(--accent), hsl(var(--accent-h), var(--accent-s), 10%) 40%);
+    --accent-shade-3: color-mix(in lch, var(--accent), hsl(var(--accent-h), var(--accent-s), 10%) 80%);
+    --accent-shade-4: color-mix(in lch, var(--accent), hsl(var(--accent-h), var(--accent-s), 10%) 90%);
 }
 
-.workspace-tab-header.is-active::before, .workspace-tab-header.is-active::after {
+.theme-dark {
+    --accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+
+    --accent-shade-1: color-mix(in lch, var(--accent), hsl(var(--accent-h), var(--accent-s), 95%) 30%);
+    --accent-shade-2: color-mix(in lch, var(--accent), hsl(var(--accent-h), var(--accent-s), 95%) 50%);
+    --accent-shade-3: color-mix(in lch, var(--accent), hsl(var(--accent-h), var(--accent-s), 95%) 80%);
+    --accent-shade-4: color-mix(in lch, var(--accent), hsl(var(--accent-h), var(--accent-s), 95%) 90%);
+    --accent-tint-1: color-mix(in lch, var(--accent), hsl(var(--accent-h), var(--accent-s), 10%) 20%);
+    --accent-tint-2: color-mix(in lch, var(--accent), hsl(var(--accent-h), var(--accent-s), 10%) 40%);
+    --accent-tint-3: color-mix(in lch, var(--accent), hsl(var(--accent-h), var(--accent-s), 10%) 80%);
+    --accent-tint-4: color-mix(in lch, var(--accent), hsl(var(--accent-h), var(--accent-s), 10%) 90%);
+}
+
+
+/******************************** Editor ********************************/
+
+/**** basics ****/
+.markdown-source-view.mod-cm6 {
+    --font-text: var(--font-monospace-override), 'Cascadia Mono', monospace;
+    font-feature-settings: "ss01";
+
+    /* --font-thin: 100; */
+    --font-light: 200;
+    --font-semilight: 255;
+    --font-normal: 330;
+    --font-semibold: 500;
+    --font-bold: 650;
+    --font-extrabold: 700;
+    /* --font-black: 900; */
+
+    --line-height-normal: 1.6;
+    --line-height-condensed: 1.3;
+    --p-spacing: 1.6em;
+
+    --file-line-width: 80ch;
+}
+
+/* line endings */
+.markdown-source-view.mod-cm6 .cm-line {
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.markdown-preview-view {
+    --font-text-size: 1.2rem;
+    --font-text: var(--font-text-override), 'CMU Serif', serif;
+    --font-monospace: var(--font-monospace-override), 'CMU Typewriter Text', monospace;
+
+    /* --font-thin: 100; */
+    /* --font-light: 200; */
+    /* --font-semilight: 300; */
+    /* --font-normal: 360; */
+    /* --font-semibold: 600; */
+    /* --font-bold: 700; */
+    /* --font-extrabold: 800; */
+    /* --font-black: 900; */
+
+    --line-height-normal: 1.8;
+    --line-height-condensed: 1.3;
+    --p-spacing: 1rem;
+
+    --file-line-width: 80%;
+
+    text-align: justify;
+}
+
+.markdown-source-view.mod-cm6.is-readable-line-width .cm-sizer {
+    max-width: calc(var(--file-line-width) + 10ch);
+    /* margin-left: 20ch; */
+}
+
+.markdown-source-view.mod-cm6 .cm-gutters {
+    margin: 0;
+    padding: 0 3ch 0 0;
+}
+
+/**** plain paragraphs + emphasis ****/
+.markdown-source-view.mod-cm6, .markdown-preview-view {
+    font-variation-settings: "wght" var(--font-normal);
+    font-weight: var(--font-normal);
+    margin-block-end: var(--p-spacing);
+}
+
+.cm-strong, .cm-strong.cm-em, strong, strong em {
+    font-variation-settings: "wght" var(--font-bold);
+    font-weight: var(--font-bold);
+}
+
+/**** headings ****/
+.markdown-source-view.mod-cm6 .HyperMD-header.cm-line,
+.markdown-preview-view :is(h1, h2, h3, h4, h5, h6) {
+    font-variation-settings: "wght" var(--font-bold);
+    font-weight: var(--font-bold);
+    line-height: var(--line-height-normal);
+    padding: 0;
+    margin: 0;
+}
+
+.markdown-source-view.mod-cm6 .HyperMD-header.cm-line {
+    font-size: var(--font-text-size);
+}
+
+/* don't hide heading markers workaround */
+.cm-formatting-header {color: var(--h1-color);}
+/* .HyperMD-header-1:not(.cm-active)::before {content: '# ';} */
+/* .HyperMD-header-2:not(.cm-active)::before {content: '## ';} */
+/* .HyperMD-header-3:not(.cm-active)::before {content: '### ';} */
+/* .HyperMD-header-4:not(.cm-active)::before {content: '#### ';} */
+/* .HyperMD-header-5:not(.cm-active)::before {content: '##### ';} */
+/* .HyperMD-header-6:not(.cm-active)::before {content: '###### ';} */
+
+.markdown-preview-view {
+    --h2-size: 1.5rem;
+    --h3-size: 1.2rem;
+}
+
+/* heading margins */
+.markdown-preview-view div:has(h3,h4,h5,h6) + div > :is(p,pre,table,ul,ol) {
+    margin-top: 0;
+}
+
+/* .markdown-preview-view div + div > :is(h1,h2,h3,h4,h5,h6) {
+    margin-top: calc(2 * var(--p-spacing));
+} */
+/*.markdown-preview-view div:has( > :is(p,pre,table,ul,ol)) + div > :is(h3,h4,h5,h6) {
+    margin-top: var(--p-spacing);
+}*/
+
+
+/**** blockquotes ****/
+.markdown-source-view.mod-cm6, .markdown-preview-view {
+    --blockquote-color: var(--accent-shade-1);
+    --blockquote-font-style: italic;
+    --blockquote-style: var(--blockquote-font-style);
+    /* --blockquote-background-color: var(--accent-tint-4); */
+    --blockquote-border-thickness: 0.25ch;
+    --blockquote-border-color: var(--accent);
+}
+
+.markdown-preview-view blockquote {
+    /* color: var(--blockquote-color); */
+    /* font-style: var(--blockquote-font-style); */
+    /* background-color: var(--blockquote-background-color); */
+    /* border-left: var(--blockquote-border-thickness) solid var(--blockquote-border-color); */
+    padding: 0 0 0 1.75ch;
+    /* margin-inline-start: 0; */
+    /* margin-inline-end: 0; */
+    margin-block-start: var(--p-spacing);
+    margin-block-end: var(--p-spacing);
+}
+
+.markdown-source-view.mod-cm6 .cm-quote, 
+.markdown-preview-view blockquote p {
+    font-variation-settings: "wght" var(--font-semilight);
+    font-weight: var(--font-semilight);
+}
+
+.markdown-source-view.mod-cm6 .cm-quote:is(.cm-strong, .cm-strong.cm-em),
+.markdown-preview-view blockquote p strong{
+    font-variation-settings: "wght" var(--font-semibold);
+    font-weight: var(--font-semibold);
+}
+
+
+/**** callouts ****/
+.markdown-source-view.mod-cm6 .callout, 
+.markdown-preview-view .callout {
+    background-color: var(--background-primary);
+    border-color: rgb(var(--callout-color));
+    border-width: 0 0 0 0.25ch;
+    border-radius: 0;
+
+    /* font-style: italic; */
+
+    padding: 0 0 0 1.75ch;
+}
+
+.markdown-source-view.mod-cm6 .callout-content:last-child > :is(p, pre, table, ul, ol),
+.markdown-preview-view .callout-content:last-child > :is(p, pre, table, ul, ol) {
+    margin-bottom: 0;
+}
+
+.markdown-source-view.mod-cm6 .callout-title,
+.markdown-preview-view .callout-title {
+    line-height: var(--line-height-normal);
+    font-variation-settings: "wght" var(--font-semibold);
+    font-weight: var(--font-semibold);
+}
+
+.markdown-source-view.mod-cm6 .callout-title {
+    gap: 1ch;
+}
+
+.markdown-source-view.mod-cm6 .callout-title .svg-icon,
+.markdown-preview-view .callout-title .svg-icon {
+    height: 2ch;
+    width: 2ch;
+    stroke-width: 2.5px;
+}
+
+/* custom callouts */
+
+.callout[data-callout="book"] {
+    --callout-color: 185 78 72;
+    --callout-icon: lucide-book-open;
+}
+
+
+/**** code ****/
+.markdown-source-view.mod-cm6, .markdown-preview-view {
+	--code-background-inline: var(--color-base-30);
+    --code-background: var(--color-base-20);
+}
+
+.markdown-source-view.mod-cm6 .cm-inline-code:not(.cm-formatting),
+.markdown-preview-view code {
+    font-variation-settings: "wght" var(--font-medium);
+    font-weight: var(--font-medium);
+    background: var(--code-background-inline);
+}
+
+.markdown-source-view.mod-cm6{
+    --code-size: var(--font-text-size);
+    --code-radius: 0;
+}
+
+.markdown-source-view.mod-cm6 .cm-inline-code:not(.cm-formatting) {
+	padding: 0;
+}
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
+    padding-left: 0;
+    /* color: var(--code-normal); */
+}
+
+/* .markdown-preview-view pre { */
+    /* position: relative; */
+    /* padding: var(--p-spacing) 2ch; */
+    /* min-height: 38px; */
+    /* background-color: var(--code-background); */
+    /* border-radius: var(--code-radius); */
+    /* white-space: var(--code-white-space); */
+    /* margin: var(--p-spacing) 0px; */
+/* } */
+
+
+/**** comments ****/
+.cm-comment {
+    font-style: italic;
+}
+
+/**** footnotes ****/
+.markdown-source-view.mod-cm6 {
+    --footnote-size: var(--font-text-size);
+}
+
+/* footnote marker */
+.cm-s-obsidian span.cm-footref, .cm-s-obsidian span.cm-blockid {
+	font-size: var(--text-normal);
+	vertical-align: baseline;
+	margin: 0;
+	/* color: var(--accent-tint-2); */
+}
+
+/* .cm-s-obsidian span.cm-footref.cm-hmd-barelink, .cm-s-obsidian span.cm-blockid {color: var(--accent-tint-2);} */
+/* .cm-s-obsidian span.cm-footref.cm-hmd-barelink.cm-formatting {color: var(--accent-tint-2);} */
+
+/* footnote itself */
+.cm-s-obsidian .cm-line.HyperMD-footnote span.cm-hmd-footnote {
+	font-size: var(--footnote-size);
+	top: 0;
+}
+
+
+/**** links ****/
+.markdown-source-view.mod-cm6, .markdown-preview-view {
+    --link-color: var(--accent);
+    --link-color-hover: var(--accent-shade-3);
+    --link-decoration: none;
+    --link-decoration-hover: none;
+    /* --link-decoration-thickness  */
+    /* --link-unresolved-color: var(--accent-tint-2); */
+    /* --link-unresolved-color-hover: var(--link-color-hover); */
+    --link-unresolved-opacity: 50%;
+    /* --link-unresolved-filter */
+    --link-unresolved-decoration-style: none;
+    /* --link-unresolved-decoration-color */
+    --link-external-color: var(--accent);
+    --link-external-color-hover: var(--link-color-hover);
+    /* --link-external-decoration */
+    /* --link-external-decoration-hover: none */
+}
+
+.external-link {
 	display: none;
 }
 
-svg * {
-	stroke-linecap: square;
-	stroke-linejoin: miter;
-	rx: 0;
-	ry: 0;
+
+/**** lists ****/
+
+.markdown-source-view.mod-cm6, .markdown-preview-view {
+    --list-indent-editing: 0;
+    /* --list-indent: 0; */
+    --list-spacing: 0;
+    /* --list-marker-align     List marker text alignment */
+    --list-marker-color: var(--text-normal);
+    /* --list-marker-color-hover     List marker color (hover) */
+    /* --list-marker-color-collapsed     List marker color for collapsed items */
+    /* --list-marker-min-width     List marker minimum width */
+    /* --list-bullet-border     List bullet border */
+    /* --list-bullet-radius: 0; */
+    /* --list-bullet-size: 0; */
+    /* --list-bullet-transform     List bullet transform property */
+    /* --list-numbered-style     list-style-type for numbered lists */
+    /* --list-bullet-end-padding */
 }
 
-.menu {
-	padding: var(--size-2-1);
+.markdown-source-view.mod-cm6.is-live-preview .cm-line.HyperMD-list-line:not(.cm-active):not(.HyperMD-task-line) .cm-fold-indicator .collapse-indicator {
+    /* padding-inline-end: var(--list-bullet-end-padding); */
+    inset-inline-end: -1.5ch;
 }
 
-.menu-item {
-	padding: var(--size-4-1) var(--size-4-2);
+.markdown-rendered ul > li {
+    --list-indent: 2ch;
 }
 
-.menu-separator {
-	margin: var(--size-2-1) calc(var(--size-2-1) * -1);
+.markdown-rendered ol > li {
+    --list-indent: 3ch;
+}
+
+.markdown-rendered li > ul > li,
+.markdown-rendered li > ol > li {
+    --list-indent: 4ch;
+}
+
+.markdown-source-view.mod-cm6 .list-bullet:after {
+	display: none;
+}
+
+.list-bullet {
+	color: var(--list-marker-color);
+}
+
+
+/**** Equations ****/
+.markdown-source-view.mod-cm6 .math-block > mjx-container {
+    margin: 0;
+    padding: 0;
+/*    overflow-x: auto;*/
+}
+
+.markdown-source-view.mod-cm6 mjx-container[jax="CHTML"] {
+    line-height: var(--line-height-normal);
+}
+
+/* Embed block (callouts, equations, etc.) hover box-shadow -> background */
+.markdown-source-view.mod-cm6 .cm-embed-block:not(.cm-table-widget):hover {
+    box-shadow: none;
+    background: var(--color-base-20);
+    border-radius: 0;
+}
+
+
+/******************************** UI ********************************/
+
+/* flatter surface */
+.theme-light {
+    /* --background-primary: #ffffff; */
+    --background-primary-alt: var(--background-primary);
+    --background-secondary: var(--background-primary);
+    --background-secondary-alt: var(--background-primary);
+}
+
+.theme-dark {
+    /* --background-primary: #202020; */
+    --background-primary-alt: var(--background-primary);
+    --background-secondary: var(--background-primary);
+    --background-secondary-alt: var(--background-primary);
+}
+
+/* left sidebar */
+body {
+    --indentation-guide-width: 0px;
+    --divider-color: transparent;
+}
+
+/* tab bar */
+body {
+    --tab-divider-color: transparent;
+    --tab-background-active: transparent;
+    --tab-text-color-focused-active: var(--accent);
+    --tab-text-color-focused-active-current: var(--accent);
+}
+
+.workspace-tab-header::before, .workspace-tab-header::after {
+    display: none;
+}
+
+/* edit block button */
+.markdown-source-view.mod-cm6 .edit-block-button {
+    padding: 0.1ch;
+}
+
+
+/******************************** Extras ********************************/
+
+/******** pandoc reference list ********/
+/* inline citations */
+.pandoc-citation.is-resolved {
+    color: var(--accent);
+}
+
+.HyperMD-quote .pandoc-citation.is-resolved {
+    color: var(--blockquote-color);
+    font-weight: var(--font-semibold);
+    font-variation-settings: "wght" var(--font-semibold);
+}
+
+blockquote .pandoc-citation.is-resolved {
+    color: var(--blockquote-color);
+    font-weight: var(--font-semibold);
+    font-variation-settings: "wght" var(--font-semibold);
+    font-style: normal;
+}
+
+/* right sidebar reference list */
+.pwc-reference-list .csl-entry-wrapper:not(:last-child) {
+    border-bottom: none;
+}
+
+
+/******** centered images ********/
+img[alt~="center"] {
+    display: block;
+    margin: auto;
 }
