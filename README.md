@@ -3,8 +3,6 @@
 Monospaced supremacy for plain text!
 
 
-
-
 ## Main features
 
 This theme was built with two main desires:
