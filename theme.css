@@ -262,6 +262,15 @@ body {
     --code-radius: 0;
 }
 
+.cm-s-obsidian .cm-inline-code.cm-formatting ~ .cm-inline-code:not(.cm-formatting) {
+    padding: 0;
+}
+
+.cm-s-obsidian .cm-inline-code.cm-formatting {
+    background-color: var(--code-background-inline);
+    padding: 0;
+}
+
 .markdown-source-view.mod-cm6 .cm-inline-code:not(.cm-formatting) {
 	padding: 0;
 }
