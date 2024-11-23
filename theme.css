@@ -52,8 +52,8 @@
     font-feature-settings: "ss01";
 
     /* --font-thin: 100; */
-    --font-light: 200;
-    --font-semilight: 255;
+    --font-extralight: 200;
+    --font-light: 255;
     --font-normal: 330;
     --font-semibold: 500;
     --font-bold: 650;
@@ -79,14 +79,15 @@
     --font-text: var(--font-text-override), 'CMU Serif', serif;
     --font-monospace: var(--font-monospace-override), 'CMU Typewriter Text', monospace;
 
-    /* --font-thin: 100; */
-    /* --font-light: 200; */
-    /* --font-semilight: 300; */
-    /* --font-normal: 360; */
-    /* --font-semibold: 600; */
-    /* --font-bold: 700; */
-    /* --font-extrabold: 800; */
-    /* --font-black: 900; */
+/*     --font-thin: 100; 
+     --font-extralight: 200; 
+     --font-light: 300; 
+     --font-normal: 400; 
+     --font-medium: 500;
+     --font-semibold: 600; 
+     --font-bold: 700; 
+     --font-extrabold: 800; 
+     --font-black: 900; */
 
     --line-height-normal: 1.8;
     --line-height-condensed: 1.3;
@@ -143,8 +144,8 @@
 /* .HyperMD-header-6:not(.cm-active)::before {content: '###### ';} */
 
 .markdown-preview-view {
-    --h2-size: 1.5rem;
-    --h3-size: 1.2rem;
+    --h2-size: 1.5em;
+    --h3-size: 1.2em;
 }
 
 /* heading margins */
@@ -152,12 +153,12 @@
     margin-top: 0;
 }
 
-body {
+/*body {
     --heading-spacing: var(--p-spacing);
 }
-
+*/
 /* markdown-preview-view div + div > :is(h1,h2,h3,h4,h5,h6) { */
-    /* margin-top: calc(2 * var(--p-spacing)); */
+/*     margin-top: calc(2 * var(--p-spacing)); */
 /* } */
 
 /*.markdown-preview-view div:has( > :is(p,pre,table,ul,ol)) + div > :is(h3,h4,h5,h6) {
@@ -189,8 +190,8 @@ body {
 
 .markdown-source-view.mod-cm6 .cm-quote, 
 .markdown-preview-view blockquote p {
-    font-variation-settings: "wght" var(--font-semilight);
-    font-weight: var(--font-semilight);
+    font-variation-settings: "wght" var(--font-light);
+    font-weight: var(--font-light);
 }
 
 .markdown-source-view.mod-cm6 .cm-quote:is(.cm-strong, .cm-strong.cm-em),
