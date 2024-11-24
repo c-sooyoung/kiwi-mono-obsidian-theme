@@ -146,6 +146,9 @@
 .markdown-preview-view {
     --h2-size: 1.5em;
     --h3-size: 1.2em;
+    --h4-size: var(--font-text-size);
+    --h5-size: var(--font-text-size);
+    --h6-size: var(--font-text-size);
 }
 
 /* heading margins */
@@ -153,10 +156,10 @@
     margin-top: 0;
 }
 
-/*body {
+body {
     --heading-spacing: var(--p-spacing);
 }
-*/
+
 /* markdown-preview-view div + div > :is(h1,h2,h3,h4,h5,h6) { */
 /*     margin-top: calc(2 * var(--p-spacing)); */
 /* } */
