@@ -15,6 +15,9 @@
     --accent-shade-2: color-mix(in lch, var(--accent), hsl(var(--accent-h), var(--accent-s), 10%) 40%);
     --accent-shade-3: color-mix(in lch, var(--accent), hsl(var(--accent-h), var(--accent-s), 10%) 80%);
     --accent-shade-4: color-mix(in lch, var(--accent), hsl(var(--accent-h), var(--accent-s), 10%) 90%);
+
+    --text-normal: #555;
+    --text-muted: #999;
 }
 
 .theme-dark {
@@ -28,6 +31,9 @@
     --accent-tint-2: color-mix(in lch, var(--accent), hsl(var(--accent-h), var(--accent-s), 10%) 40%);
     --accent-tint-3: color-mix(in lch, var(--accent), hsl(var(--accent-h), var(--accent-s), 10%) 80%);
     --accent-tint-4: color-mix(in lch, var(--accent), hsl(var(--accent-h), var(--accent-s), 10%) 90%);
+
+    --text-normal: #aaa;
+    --text-muted: #777;
 }
 
 
@@ -167,6 +173,14 @@ body {
 /*.markdown-preview-view div:has( > :is(p,pre,table,ul,ol)) + div > :is(h3,h4,h5,h6) {
     margin-top: var(--p-spacing);
 }*/
+
+/**** inline title ****/
+.inline-title {
+        font-variation-settings: "wght" var(--font-bold);
+        font-weight: var(--font-bold);
+        --inline-title-line-height: var(--line-height-normal);    
+        letter-spacing: 0;
+    }    
 
 
 /**** blockquotes ****/
@@ -411,6 +425,14 @@ body {
     box-shadow: none;
     background: var(--color-base-20);
     border-radius: 0;
+}
+
+
+/* flashing */
+.is-flashing {
+    transition: none;
+    border-radius: 0;
+    --text-highlight-bg: none;
 }
 
 
