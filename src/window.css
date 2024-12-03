@@ -1,0 +1,34 @@
+body {
+  --ribbon-background: var(--background-primary);
+  --ribbon-background-collapsed: var(--background-primary);
+
+
+
+  /* Tabs & Title bar*/
+  --titlebar-background: var(--background-secondary);
+  --titlebar-background-focused: var(--background-primary);
+  --titlebar-border-width: 0px;
+  --titlebar-border-color: transparent;
+  --titlebar-text-color: var(--text-muted);
+  --titlebar-text-color-focused: var(--text-normal);
+  --titlebar-text-weight: var(--font-bold);
+
+  --tab-background-active: var(--background-primary);
+  --tab-text-color: var(--text-faint);
+  --tab-text-color-active: var(--text-muted);
+  --tab-text-color-focused: var(--text-muted);
+  --tab-text-color-focused-active: var(--text-accent);
+  --tab-text-color-focused-highlighted: var(--text-accent);
+  --tab-text-color-focused-active-current: var(--text-accent);
+  --tab-font-size: var(--font-ui-small);
+  --tab-font-weight: inherit;
+  --tab-container-background: var(--background-primary);
+  --tab-divider-color: transparent;
+  --tab-outline-color: transparent;
+  --tab-outline-width: 0;
+  --tab-curve: 0;
+  --tab-radius: var(--radius-s);
+  --tab-radius-active: var(--radius-s);
+  --tab-width: 200px;
+  --tab-max-width: 320px;
+}
