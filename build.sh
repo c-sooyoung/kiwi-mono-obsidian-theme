@@ -3,6 +3,8 @@
 SRC_DIR="./src"
 OUTPUT_FILE="theme.css"
 
-cat "$SRC_DIR"/*.css > "$OUTPUT_FILE"
+touch "$OUTPUT_FILE"
+cat "$SRC_DIR/"*.css > "$OUTPUT_FILE"
+cat "$SRC_DIR/"*/*.css >> "$OUTPUT_FILE"
 
-cp "$OUTPUT_FILE" "$HOME/Home/apteryx.rowi/.obsidian/themes/Kiwi Mono/theme.css"
+cp "$OUTPUT_FILE" "$HOME/Home/apteryx/theme-dev-vault/.obsidian/snippets/kiwi-mono.css"
