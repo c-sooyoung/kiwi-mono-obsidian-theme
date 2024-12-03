@@ -5,14 +5,54 @@
 
   .cm-gutters {
     font-size: 1rem;
-    margin: 0 2ch 0 -6ch;
-    padding: 0;
-    opacity: 0.5;
+    margin: 0 0 0 -6ch;
+    padding: 0 2ch 0 0;
+    color: var(--text-faint);
+
+    font-variation-settings: "wght" var(--font-thin);
+    font-weight: var(--font-thin);
 
     .cm-active {
-      color: var(--color-base-60);
-      background-color: var(--color-base-25);
-      border-radius: var(--radius-s);
+      color: var(--text-normal);
+      /* background-color: var(--color-base-25); */
+      /* border-radius: var(--radius-s); */
+      font-variation-settings: "wght" var(--font-semibold);
+      font-weight: var(--font-semibold);
     }
   }
+
+  .cm-content {
+    & > * {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  --font-monospace-theme: 'Cascadia Mono';
+  font-feature-settings: "ss01";
+  --font-text: var(--font-monospace);
+
+  --font-text-size: 1rem;
+  --inline-title-size: var(--font-text-size);
+  --h1-size: var(--font-text-size);
+  --h2-size: var(--font-text-size);
+  --h3-size: var(--font-text-size);
+  --h4-size: var(--font-text-size);
+  --h5-size: var(--font-text-size);
+  --h6-size: var(--font-text-size);
+  --footnote-size: var(--font-text-size);
+  --tag-size: var(--font-text-size);
+  --code-size: var(--font-text-size);
+
+  --line-height-normal: 1.8;
+  --line-height-tight: 1.4;
+
+  --font-thin: 200;
+  --font-extralight: 240;
+  --font-light: 280;
+  --font-normal: 330;
+  --font-semibold: 500;
+  --font-bold: 600;
+  --font-extrabold: 650;
+  --font-black: 700;
 }
