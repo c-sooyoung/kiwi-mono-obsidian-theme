@@ -7,4 +7,4 @@ touch "$OUTPUT_FILE"
 cat "$SRC_DIR/"*.css > "$OUTPUT_FILE"
 cat "$SRC_DIR/"*/*.css >> "$OUTPUT_FILE"
 
-cp "$OUTPUT_FILE" "$HOME/Home/apteryx/theme-dev-vault/.obsidian/snippets/kiwi-mono.css"
+cp "$OUTPUT_FILE" "$HOME/Home/apteryx/theme-dev-vault/.obsidian/themes/Kiwi Mono/theme.css"
