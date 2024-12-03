@@ -1,0 +1,16 @@
+.markdown-source-view {
+  --font-monospace-theme: 'Cascadia Mono';
+  --font-text: var(--font-monospace);
+
+  --font-text-size: 1rem;
+  --inline-title-size: var(--font-text-size);
+  --h1-size: var(--font-text-size);
+  --h2-size: var(--font-text-size);
+  --h3-size: var(--font-text-size);
+  --h4-size: var(--font-text-size);
+  --h5-size: var(--font-text-size);
+  --h6-size: var(--font-text-size);
+  --footnote-size: var(--font-text-size);
+  --tag-size: var(--font-text-size);
+  --code-size: var(--font-text-size);
+}
