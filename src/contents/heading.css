@@ -1,0 +1,45 @@
+.markdown-source-view {
+
+    --h1-line-height: var(--line-height-normal);
+    --h2-line-height: var(--line-height-normal);
+    --h3-line-height: var(--line-height-normal);
+    --h4-line-height: var(--line-height-normal);
+    --h5-line-height: var(--line-height-normal);
+    --h6-line-height: var(--line-height-normal);
+
+    --h1-weight: var(--font-extrabold);
+    --h2-weight: var(--h1-weight);
+    --h3-weight: var(--h1-weight);
+    --h4-weight: var(--h1-weight);
+    --h5-weight: var(--h1-weight);
+    --h6-weight: var(--h1-weight);
+    
+    .cm-line.HyperMD-header {
+        font-variation-settings: "wght" var(--h1-weight);
+        font-weight: var(--h1-weight);
+        padding: 0;
+        margin: 0;
+    }
+
+    .HyperMD-header-1,
+    .HyperMD-header-2,
+    .HyperMD-header-3,
+    .HyperMD-header-4,
+    .HyperMD-header-5,
+    .HyperMD-header-6 {
+        letter-spacing: 0;
+    }
+
+    .cm-formatting-header {
+        color: var(--text-normal);
+    }
+}
+
+.markdown-preview-view {
+    h1, h2, h3, h4, h5, h6 {
+        font-variation-settings: "wght" var(--h1-weight);
+        font-weight: var(--h1-weight);
+        padding: 0;
+        margin: 0;
+    }
+}
