@@ -1,34 +1,74 @@
 body {
+  /* Defaults */
+  --background-secondary: var(--background-primary);
+  --background-secondary-alt: var(--background-primary-alt);
+
+  /* Ribbon */
   --ribbon-background: var(--background-primary);
   --ribbon-background-collapsed: var(--background-primary);
+  /* --ribbon-width: 44px; */
+  /* --ribbon-padding: var(--size-4-2) var(--size-4-1) var(--size-4-3); */
 
-
-
-  /* Tabs & Title bar*/
-  --titlebar-background: var(--background-secondary);
+  /* Tabs & Title bar */
+  --titlebar-background: var(--background-primary);
   --titlebar-background-focused: var(--background-primary);
-  --titlebar-border-width: 0px;
+  /* --titlebar-border-width: 0px; */
   --titlebar-border-color: transparent;
   --titlebar-text-color: var(--text-muted);
   --titlebar-text-color-focused: var(--text-normal);
   --titlebar-text-weight: var(--font-bold);
-
-  --tab-background-active: var(--background-primary);
-  --tab-text-color: var(--text-faint);
-  --tab-text-color-active: var(--text-muted);
-  --tab-text-color-focused: var(--text-muted);
+  /* --tab-background-active: var(--background-primary); */
+  /* --tab-text-color: var(--text-faint); */
+  /* --tab-text-color-active: var(--text-muted); */
+  /* --tab-text-color-focused: var(--text-muted); */
   --tab-text-color-focused-active: var(--text-accent);
   --tab-text-color-focused-highlighted: var(--text-accent);
   --tab-text-color-focused-active-current: var(--text-accent);
-  --tab-font-size: var(--font-ui-small);
-  --tab-font-weight: inherit;
+  /* --tab-font-size: var(--font-ui-small); */
+  /* --tab-font-weight: inherit; */
   --tab-container-background: var(--background-primary);
   --tab-divider-color: transparent;
   --tab-outline-color: transparent;
   --tab-outline-width: 0;
   --tab-curve: 0;
-  --tab-radius: var(--radius-s);
+  /* --tab-radius: var(--radius-s); */
   --tab-radius-active: var(--radius-s);
-  --tab-width: 200px;
-  --tab-max-width: 320px;
+  /* --tab-width: 200px; */
+  /* --tab-max-width: 320px; */
+
+  /* Sidebars */
+  /* --nav-item-size: var(--font-ui-small); */
+  /* --nav-item-color: var(--text-muted); */
+  /* --nav-item-color-hover: var(--text-normal); */
+  --nav-item-color-active: var(--background-primary);
+  /* --nav-item-color-selected: var(--text-normal); */
+  /* --nav-item-color-highlighted: var(--text-accent); */
+  --nav-item-background-hover: var(--background-primary-alt);
+  --nav-item-background-active: var(--color-accent);
+  /* --nav-item-background-selected: hsla(var(--color-accent-hsl), 0.15); */
+  /* --nav-item-padding: var(--size-4-1) var(--size-4-2) var(--size-4-1) var(--size-4-6); */
+  /* --nav-item-parent-padding: var(--nav-item-padding); */
+  /* --nav-item-children-padding-start: var(--size-2-2); */
+  /* --nav-item-children-margin-start: var(--size-4-3); */
+  /* --nav-item-weight: inherit; */
+  /* --nav-item-weight-hover: inherit; */
+  /* --nav-item-weight-active: inherit; */
+  /* --nav-item-white-space: pre; */
+  /* --nav-indentation-guide-width: var(--indentation-guide-width); */
+  --nav-indentation-guide-color: transparent;
+  /* --nav-collapse-icon-color: var(--collapse-icon-color); */
+  /* --nav-collapse-icon-color-collapsed: var(--text-faint); */
+  /* --nav-heading-color: var(--text-normal); */
+  /* --nav-heading-color-hover: var(--text-normal); */
+  /* --nav-heading-color-collapsed: var(--text-faint); */
+  /* --nav-heading-color-collapsed-hover: var(--text-muted); */
+  /* --nav-heading-weight: var(--font-medium); */
+  /* --nav-heading-weight-hover: var(--font-medium); */
+
+  /* Dividers */
+  --divider-color: transparent;
+  /* --divider-color-hover: var(--interactive-accent); */
+  /* --divider-width: 1px; */
+  /* --divider-width-hover: 3px; */
+  /* --divider-vertical-height: calc(100% - var(--header-height)); */
 }
