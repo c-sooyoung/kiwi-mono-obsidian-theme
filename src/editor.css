@@ -1,0 +1,18 @@
+.markdown-source-view.mod-cm6 {
+  .cm-contentContainer {
+    justify-content: end;
+  }
+
+  .cm-gutters {
+    font-size: 1rem;
+    margin: 0 2ch 0 -6ch;
+    padding: 0;
+    opacity: 0.5;
+
+    .cm-active {
+      color: var(--color-base-60);
+      background-color: var(--color-base-25);
+      border-radius: var(--radius-s);
+    }
+  }
+}
