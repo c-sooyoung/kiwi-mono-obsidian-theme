@@ -1,12 +1,23 @@
-.markdown-source-view {   
-    .cm-strong, .cm-strong.cm-em {
-        font-variation-settings: "wght" var(--font-bold);
-        font-weight: var(--font-bold);
-    }
+/* contents/emphasis.css */
+.markdown-source-view {
+  .cm-strong {
+    font-variation-settings: "wght" var(--font-bold);
+    font-weight: var(--font-bold);
+  }
 
-    .cm-strong, .cm-em, .cm-strikethrough, .cm-highlight {
-        &.cm-formatting {
-            color: var(--text-faint);
-        }
+  .cm-strong,
+  .cm-em,
+  .cm-strikethrough,
+  .cm-highlight {
+    &.cm-formatting {
+      color: var(--text-faint);
     }
+  }
+}
+
+.markdown-preview-view {
+  strong {
+    font-variation-settings: "wght" var(--font-bold);
+    font-weight: var(--font-bold);
+  }
 }
