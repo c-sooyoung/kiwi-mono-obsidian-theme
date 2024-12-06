@@ -1,0 +1,26 @@
+/* contents/footnote.css */
+.markdown-source-view {
+  & {
+    --footnote-size: var(--font-text-size);
+  }
+
+  span.cm-footref {
+    font-size: var(--footnote-size);
+    vertical-align: unset;
+    top: 0;
+  }
+
+  /* &.cm-s-obsidian .cm-line.HyperMD-footnote span.cm-hmd-footnote .cm-underline {
+    cursor: text;
+    display: inline-block;
+    font-size: var(--font-text-size);
+    position: relative;
+    top: 0;
+    color: var(--text-muted);
+  } */
+}
+
+/* .markdown-preview-view {
+
+} */
+
