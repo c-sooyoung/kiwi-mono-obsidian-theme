@@ -7,8 +7,8 @@
     --link-decoration-hover: underline;
     --link-decoration-thickness: auto;
     --link-weight: var(--font-weight);
-    --link-external-color: var(--color-blue);
-    --link-external-color-hover: var(--color-blue);
+    --link-external-color: var(--color-cyan);
+    --link-external-color-hover: var(--color-cyan);
     --link-external-decoration: none;
     --link-external-decoration-hover: underline;
     --link-external-filter: none;
@@ -44,8 +44,8 @@
     --link-decoration-hover: underline;
     --link-decoration-thickness: auto;
     --link-weight: var(--font-weight);
-    --link-external-color: var(--color-blue);
-    --link-external-color-hover: var(--color-blue);
+    --link-external-color: var(--color-cyan);
+    --link-external-color-hover: var(--color-cyan);
     --link-external-decoration: none;
     --link-external-decoration-hover: underline;
     --link-external-filter: none;
