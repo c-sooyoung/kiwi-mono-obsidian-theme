@@ -1,4 +1,6 @@
+/* contents/heading.css */
 .markdown-source-view.mod-cm6 {
+  & {
     --h1-size: var(--font-text-size);
     --h2-size: var(--font-text-size);
     --h3-size: var(--font-text-size);
@@ -19,38 +21,23 @@
     --h4-weight: var(--h1-weight);
     --h5-weight: var(--h1-weight);
     --h6-weight: var(--h1-weight);
-    
-    .cm-line.HyperMD-header {
-        font-variation-settings: "wght" var(--h1-weight);
-        font-weight: var(--h1-weight);
-        padding: 0;
-        margin: 0;
-    }
+  }
 
-    .HyperMD-header-1,
-    .HyperMD-header-2,
-    .HyperMD-header-3,
-    .HyperMD-header-4,
-    .HyperMD-header-5,
-    .HyperMD-header-6 {
-        letter-spacing: 0;
-    }
+  .cm-header {
+    font-variation-settings: "wght" var(--h1-weight);
+    font-weight: var(--h1-weight);
+    padding: 0;
+    margin: 0;
+    letter-spacing: 0;
+  }
 
-    .cm-formatting-header {
-        color: var(--text-normal);
-    }
+  .cm-formatting-header {
+    color: var(--text-normal);
+  }
 }
 
-.markdown-preview-view, .markdown-rendered {
-    h1, h2, h3, h4, h5, h6 {
-        font-variation-settings: "wght" var(--h1-weight);
-        font-weight: var(--h1-weight);
-        padding: 0;
-        margin: 0;
-        --heading-spacing: 1em;
-    }
-
-    --inline-title-size: 2em;
+.markdown-preview-view {
+  & {
     --h1-size: 2em;
     --h2-size: 1.75em;
     --h3-size: 1.5em;
@@ -58,11 +45,36 @@
     --h5-size: var(--font-text-size);
     --h6-size: var(--font-text-size);
 
-    div:has(h3,h4,h5,h6) + div > p {
-        margin-top: 0;
-    }
+    --h1-line-height: var(--line-height-normal);
+    --h2-line-height: var(--line-height-normal);
+    --h3-line-height: var(--line-height-normal);
+    --h4-line-height: var(--line-height-normal);
+    --h5-line-height: var(--line-height-normal);
+    --h6-line-height: var(--line-height-normal);
 
-    * + :is(h1,h2,h3,h4,h5,h6), div + div > :is(h1,h2,h3,h4,h5,h6) {
-        margin-top: var(--heading-spacing);
+    --h1-weight: var(--font-bold);
+    --h2-weight: var(--h1-weight);
+    --h3-weight: var(--h1-weight);
+    --h4-weight: var(--h1-weight);
+    --h5-weight: var(--h1-weight);
+    --h6-weight: var(--h1-weight);
+
+    --heading-spacing: 1em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-variation-settings: "wght" var(--h1-weight);
+    font-weight: var(--h1-weight);
+    padding: 0;
+    margin: 0;
+
+    * + &,
+    div + div > & {
+      margin-top: var(--heading-spacing);
     }
+  }
+
+  div:has(h3, h4, h5, h6) + div > p {
+    margin-top: 0;
+  }
 }
