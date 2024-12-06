@@ -1,3 +1,4 @@
+/* window.css */
 body {
   /* Defaults */
   --background-secondary: var(--background-primary);
@@ -72,3 +73,20 @@ body {
   /* --divider-width-hover: 3px; */
   /* --divider-vertical-height: calc(100% - var(--header-height)); */
 }
+
+.theme-light {
+  --background-primary: #fff;
+  --background-primary-alt: #eee;
+  --text-normal: #444;
+  --text-muted: #888;
+  --text-faint: #bbb;
+}
+
+.theme-dark {
+  --background-primary: #111;
+  --background-primary-alt: #222;
+  --text-normal: #aaa;
+  --text-muted: #777;
+  --text-faint: #555;
+}
+
