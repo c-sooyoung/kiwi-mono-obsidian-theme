@@ -24,7 +24,7 @@
 
   .cm-gutters {
     font-size: var(--font-text-size);
-    margin: 0 1ch 0 -20ch;
+    margin: 0 2ch 0 -20ch;
     padding: 0;
     color: var(--color-base-30);
 
@@ -36,7 +36,7 @@
   }
 
   .cm-gutterElement {
-    padding: 0 1ch;
+    padding: 0 1ch 0 2ch;
     min-width: 5ch;
   }
 
