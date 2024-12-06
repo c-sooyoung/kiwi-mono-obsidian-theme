@@ -1,5 +1,14 @@
+/* contents/paragraph.css */
 .markdown-source-view {
+  .cm-line {
     font-variation-settings: "wght" var(--font-normal);
     font-weight: var(--font-normal);
+  }
 }
 
+.markdown-preview-view {
+  p {
+    font-variation-settings: "wght" var(--font-normal);
+    font-weight: var(--font-normal);
+  }
+}
