@@ -1,4 +1,4 @@
-/* editor.css */
+/* content-window.css */
 .markdown-source-view.mod-cm6 {
   & {
     --font-monospace-theme: 'Cascadia Mono';
@@ -45,6 +45,15 @@
       margin: 0;
       padding: 0;
     }
+  }
+}
+
+.markdown-preview-view {
+  & {
+    --font-text-theme: 'CMU Serif';
+    --font-text-size: 1em;
+    --line-height-normal: 1.8em;
+    --line-height-tight: 1.4em;
   }
 }
 
