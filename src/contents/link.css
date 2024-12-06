@@ -1,0 +1,70 @@
+/* contents/link.css */
+.markdown-source-view {
+  & {
+    --link-color: var(--text-accent);
+    --link-color-hover: var(--text-accent);
+    --link-decoration: none;
+    --link-decoration-hover: underline;
+    --link-decoration-thickness: auto;
+    --link-weight: var(--font-weight);
+    --link-external-color: var(--color-blue);
+    --link-external-color-hover: var(--color-blue);
+    --link-external-decoration: none;
+    --link-external-decoration-hover: underline;
+    --link-external-filter: none;
+    --link-unresolved-color: var(--color-red);
+    --link-unresolved-opacity: 0.5;
+    --link-unresolved-filter: none;
+    --link-unresolved-decoration-style: unset;
+    --link-unresolved-decoration-color: var(--color-red);
+  }
+
+  .cm-hmd-internal-link {
+    .is-unresolved:hover {
+      opacity: 1;
+      color: var(--link-unresolved-color);
+      text-decoration-color: var(--link-unresolved-color);
+      text-decoration-line: var(--link-decoration-hover);
+    }
+  }
+
+  .external-link {
+    background-image: none;
+    background-size: 0;
+    padding-inline-end: 0;
+    background-position-y: 0;
+  }
+}
+
+.markdown-preview-view {
+  & {
+    --link-color: var(--text-accent);
+    --link-color-hover: var(--text-accent-hover);
+    --link-decoration: none;
+    --link-decoration-hover: underline;
+    --link-decoration-thickness: auto;
+    --link-weight: var(--font-weight);
+    --link-external-color: var(--color-blue);
+    --link-external-color-hover: var(--color-blue);
+    --link-external-decoration: none;
+    --link-external-decoration-hover: underline;
+    --link-external-filter: none;
+    --link-unresolved-color: var(--color-red);
+    --link-unresolved-opacity: 0.5;
+    --link-unresolved-filter: none;
+    --link-unresolved-decoration-style: unset;
+    --link-unresolved-decoration-color: var(--color-red);
+  }
+
+  .internal-link {
+    transition: none;
+
+    &.is-unresolved:hover {
+      opacity: 1;
+      color: var(--link-unresolved-color);
+      text-decoration-color: var(--link-unresolved-color);
+      text-decoration-line: var(--link-decoration-hover);
+    }
+  }
+}
+
