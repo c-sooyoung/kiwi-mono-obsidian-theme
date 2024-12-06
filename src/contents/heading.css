@@ -7,14 +7,12 @@
     --h4-size: var(--font-text-size);
     --h5-size: var(--font-text-size);
     --h6-size: var(--font-text-size);
-
     --h1-line-height: var(--line-height-normal);
     --h2-line-height: var(--line-height-normal);
     --h3-line-height: var(--line-height-normal);
     --h4-line-height: var(--line-height-normal);
     --h5-line-height: var(--line-height-normal);
     --h6-line-height: var(--line-height-normal);
-
     --h1-weight: var(--font-extrabold);
     --h2-weight: var(--h1-weight);
     --h3-weight: var(--h1-weight);
@@ -44,21 +42,18 @@
     --h4-size: var(--font-text-size);
     --h5-size: var(--font-text-size);
     --h6-size: var(--font-text-size);
-
     --h1-line-height: var(--line-height-normal);
     --h2-line-height: var(--line-height-normal);
     --h3-line-height: var(--line-height-normal);
     --h4-line-height: var(--line-height-normal);
     --h5-line-height: var(--line-height-normal);
     --h6-line-height: var(--line-height-normal);
-
     --h1-weight: var(--font-bold);
     --h2-weight: var(--h1-weight);
     --h3-weight: var(--h1-weight);
     --h4-weight: var(--h1-weight);
     --h5-weight: var(--h1-weight);
     --h6-weight: var(--h1-weight);
-
     --heading-spacing: 1em;
   }
 
@@ -78,3 +73,4 @@
     margin-top: 0;
   }
 }
+

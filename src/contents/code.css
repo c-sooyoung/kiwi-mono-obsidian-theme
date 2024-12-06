@@ -52,8 +52,11 @@
   }
   
   .cm-line:has(> .cm-hmd-indented-code) {
-    --code-background-inline: transparent;
     background-color: var(--code-background);
+
+    .cm-hmd-indented-code {
+      background-color: transparent;
+    }
   }
 
   .cm-line.HyperMD-codeblock {
@@ -61,8 +64,7 @@
   }
 }
 
-.markdown-preview-view,
-.markdown-rendered {
+.markdown-preview-view {
   pre {
     position: relative;
     padding: 1.5ch;
@@ -73,3 +75,4 @@
     overflow-x: auto;
   }
 }
+
