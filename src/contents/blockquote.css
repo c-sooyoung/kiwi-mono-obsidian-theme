@@ -1,29 +1,39 @@
-body {
-  --blockquote-border-thickness: 0.25ch;
-  --blockquote-border-color: var(--text-accent);
-  --blockquote-style: italic;
-  --blockquote-font-style: italic;
-  --blockquote-color: var(--text-accent);
-  --blockquote-background-color: transparent;
-}
-
+/* contents/blockquote.css */
 .markdown-source-view.mod-cm6 {
-  span.cm-formatting-quote {
-    color: var(--text-accent);
+  & {
+    --blockquote-border-thickness: 0.25ch;
+    --blockquote-border-color: var(--text-accent);
+    --blockquote-style: italic;
+    --blockquote-font-style: italic;
+    --blockquote-color: var(--text-accent);
+    --blockquote-background-color: transparent;
+  }
+
+  .cm-quote {
+    &.cm-em {
+      font-style: normal;
+    }
+
+    &.cm-formatting-quote {
+      color: var(--text-accent);
+    }
   }
 
   .cm-active.HyperMD-quote::before {
     --blockquote-border-color: transparent;
   }
-
-  .cm-quote {
-    &.cm-em {
-      text-decoration: normal;
-    }
-  }
 }
 
-.markdown-preview-view, .markdown-rendered {
+.markdown-preview-view {
+  & {
+    --blockquote-border-thickness: 0.25ch;
+    --blockquote-border-color: var(--text-accent);
+    --blockquote-style: italic;
+    --blockquote-font-style: italic;
+    --blockquote-color: var(--text-accent);
+    --blockquote-background-color: transparent;
+  }
+
   blockquote {
     padding-left: 1.75ch;
 
