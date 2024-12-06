@@ -4,20 +4,20 @@
   }
 
   .cm-gutters {
-    font-size: 1rem;
-    margin: 0 0 0 -6ch;
-    padding: 0 2ch 0 0;
-    color: var(--text-faint);
+    font-size: var(--font-text-size);
+    margin: 0 1ch 0 -20ch;
+    padding: 0;
+    color: var(--color-base-30);
 
-    font-variation-settings: "wght" var(--font-thin);
-    font-weight: var(--font-thin);
+    .cm-gutterElement {
+      padding: 0 1ch 0 1ch;
+      min-width: 5ch;
+    }
 
     .cm-active {
-      color: var(--text-normal);
-      /* background-color: var(--color-base-25); */
-      /* border-radius: var(--radius-s); */
-      font-variation-settings: "wght" var(--font-semibold);
-      font-weight: var(--font-semibold);
+      color: var(--background-primary);
+      background-color: var(--color-base-30);
+      border-radius: var(--radius-s);
     }
   }
 
@@ -31,21 +31,10 @@
   --font-monospace-theme: 'Cascadia Mono';
   font-feature-settings: "ss01";
   --font-text: var(--font-monospace);
-
   --font-text-size: 1rem;
-  --inline-title-size: var(--font-text-size);
-  --h1-size: var(--font-text-size);
-  --h2-size: var(--font-text-size);
-  --h3-size: var(--font-text-size);
-  --h4-size: var(--font-text-size);
-  --h5-size: var(--font-text-size);
-  --h6-size: var(--font-text-size);
-  --footnote-size: var(--font-text-size);
-  --tag-size: var(--font-text-size);
-  --code-size: var(--font-text-size);
 
-  --line-height-normal: 1.8;
-  --line-height-tight: 1.4;
+  --line-height-normal: 1.8em;
+  --line-height-tight: 1.4em;
 
   --font-thin: 200;
   --font-extralight: 240;
@@ -55,4 +44,7 @@
   --font-bold: 600;
   --font-extrabold: 650;
   --font-black: 700;
+
+  --file-line-width: 80ch;
 }
+
