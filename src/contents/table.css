@@ -1,0 +1,11 @@
+.markdown-source-view.mod-cm6 {
+    .cm-table-widget {
+        margin: 0 !important;
+    }
+}
+
+.markdown-preview-view {
+    table {
+        width: 100%;
+    }
+}
