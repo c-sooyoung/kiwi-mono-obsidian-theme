@@ -34,7 +34,7 @@
   }
 }
 
-.markdown-preview-view {
+.markdown-reading-view {
   & {
     --h1-size: 2em;
     --h2-size: 1.75em;

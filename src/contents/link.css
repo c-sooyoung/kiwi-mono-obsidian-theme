@@ -36,7 +36,7 @@
   }
 }
 
-.markdown-preview-view {
+.markdown-reading-view {
   & {
     --link-color: var(--text-accent);
     --link-color-hover: var(--text-accent-hover);

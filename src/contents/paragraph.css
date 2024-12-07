@@ -6,7 +6,7 @@
   }
 }
 
-.markdown-preview-view {
+.markdown-reading-view {
   p {
     font-variation-settings: "wght" var(--font-normal);
     font-weight: var(--font-normal);

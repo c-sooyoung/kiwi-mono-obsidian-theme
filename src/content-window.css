@@ -48,7 +48,7 @@
   }
 }
 
-.markdown-preview-view {
+.markdown-reading-view {
   & {
     --font-text-theme: 'CMU Serif';
     --font-text-size: 1em;
