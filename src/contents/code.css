@@ -64,7 +64,7 @@
   }
 }
 
-.markdown-preview-view {
+.markdown-reading-view {
   pre {
     position: relative;
     padding: 1.5ch;
@@ -73,6 +73,15 @@
     border-radius: calc(var(--code-radius) * 2);
     white-space: var(--code-white-space);
     overflow-x: auto;
+
+    code {
+      background-color: transparent;
+      padding: 0;
+    }
+  }
+
+  code {
+    background-color: var(--code-background-inline);
   }
 }
 

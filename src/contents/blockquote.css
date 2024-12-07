@@ -17,6 +17,10 @@
     &.cm-formatting-quote {
       color: var(--text-accent);
     }
+
+    &.cm-code, &.cm-inline-code {
+      font-style: normal;
+    }
   }
 
   .cm-active.HyperMD-quote::before {
@@ -24,7 +28,7 @@
   }
 }
 
-.markdown-preview-view {
+.markdown-reading-view {
   & {
     --blockquote-border-thickness: 0.25ch;
     --blockquote-border-color: var(--text-accent);
@@ -35,9 +39,13 @@
   }
 
   blockquote {
-    padding-left: 1.75ch;
+    padding: 0 0 0 1.75ch;
 
     em {
+      font-style: normal;
+    }
+
+    code {
       font-style: normal;
     }
   }

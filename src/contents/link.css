@@ -66,5 +66,9 @@
       text-decoration-line: var(--link-decoration-hover);
     }
   }
+
+  .external-link {
+    background-position-y: 2px;
+  }
 }
 

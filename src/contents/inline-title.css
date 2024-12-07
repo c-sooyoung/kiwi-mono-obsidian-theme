@@ -12,10 +12,11 @@
 
   .inline-title {
     font-variation-settings: "wght" var(--inline-title-weight);
+    letter-spacing: 0;
   }
 }
 
-.markdown-preview-view {
+.markdown-reading-view {
   & {
     --inline-title-color: var(--h1-color);
     --inline-title-font: var(--h1-font);
@@ -29,6 +30,7 @@
 
   .inline-title {
     font-variation-settings: "wght" var(--inline-title-weight);
+    letter-spacing: 0;
   }
 }
 
