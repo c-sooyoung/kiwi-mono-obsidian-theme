@@ -1,0 +1,6 @@
+/* contents/comment.css */
+.markdown-source-view {
+  .cm-comment {
+    font-style: italic;
+  }
+}
