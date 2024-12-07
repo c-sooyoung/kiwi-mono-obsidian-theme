@@ -47,7 +47,7 @@ CSS files targeting individual elements are in the `src` folder. The `theme.css`
 
 Ideally, each css file would target separate elements and be independent from each other, with the `.markdown-source-view` scope for editing mode and `.markdown-reading-view` for reading mode. For clarity, even styles that are shared via variables are declared separately even if duplicated. 
 
-Some elements, especially nested elements and those inside a prerenderd `.markdown-rendered` block may not be targetted cleanly by just the two main views. In such cases, the nested elements will be called *inside the CSS file of the parent element*, rather than its own file. For example:
+Some elements, especially nested elements and those inside a prerendered `.markdown-rendered` block may not be targetted cleanly by just the two main views. In such cases, the nested elements will be called *inside the CSS file of the parent element*, rather than its own file. For example:
 ```css
 .markdown-source-view {
     .callout {
