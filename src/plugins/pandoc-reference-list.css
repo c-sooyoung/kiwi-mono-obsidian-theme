@@ -35,37 +35,7 @@
   }
 }
 
-
 .pwc-reference-list .csl-entry-wrapper:not(:last-child) {
   border-bottom: none;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .HyperMD-quote .pandoc-citation.is-resolved {
-    font-weight: var(--font-semibold);
-    font-variation-settings: "wght" var(--font-semibold);
-} */
-
-/* blockquote .pandoc-citation.is-resolved {
-    font-weight: var(--font-semibold);
-    font-variation-settings: "wght" var(--font-semibold);
-    font-style: normal;
-} */
-
-/* right sidebar reference list */
-.pwc-reference-list .csl-entry-wrapper:not(:last-child) {
-  border-bottom: none;
-}
