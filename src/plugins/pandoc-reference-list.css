@@ -1,0 +1,71 @@
+/* plugins/pandoc-reference-list.css */
+.markdown-source-view {
+  & {
+    --citation-color: var(--color-cyan);
+  }
+
+  .pandoc-citation {
+    color: var(--citation-color);
+  }
+
+  .cm-pandoc-citation {
+    .cm-link:has(&) {
+      --link-external-color: var(--link-unresolved-color);
+      --link-external-color-hover: var(--link-unresolved-color);
+    }
+
+    .cm-link:has(&.is-resolved) {
+      --link-external-color: var(--citation-color);
+      --link-external-color-hover: var(--citation-color);
+    }
+
+    &.pandoc-citation {
+      color: inherit;
+    }
+  }
+}
+
+.markdown-reading-view {
+  & {
+    --citation-color: var(--color-cyan);
+  }
+
+  .pandoc-citation {
+    color: var(--citation-color);
+  }
+}
+
+
+.pwc-reference-list .csl-entry-wrapper:not(:last-child) {
+  border-bottom: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .HyperMD-quote .pandoc-citation.is-resolved {
+    font-weight: var(--font-semibold);
+    font-variation-settings: "wght" var(--font-semibold);
+} */
+
+/* blockquote .pandoc-citation.is-resolved {
+    font-weight: var(--font-semibold);
+    font-variation-settings: "wght" var(--font-semibold);
+    font-style: normal;
+} */
+
+/* right sidebar reference list */
+.pwc-reference-list .csl-entry-wrapper:not(:last-child) {
+  border-bottom: none;
+}
