@@ -48,7 +48,7 @@
   }
 }
 
-.markdown-preview-view {
+.markdown-reading-view {
   & {
     --font-text-theme: 'CMU Serif';
     --font-text-size: 1em;
@@ -200,6 +200,10 @@ body {
     &.cm-formatting-quote {
       color: var(--text-accent);
     }
+
+    &.cm-code, &.cm-inline-code {
+      font-style: normal;
+    }
   }
 
   .cm-active.HyperMD-quote::before {
@@ -207,7 +211,7 @@ body {
   }
 }
 
-.markdown-preview-view {
+.markdown-reading-view {
   & {
     --blockquote-border-thickness: 0.25ch;
     --blockquote-border-color: var(--text-accent);
@@ -218,9 +222,13 @@ body {
   }
 
   blockquote {
-    padding-left: 1.75ch;
+    padding: 0 0 0 1.75ch;
 
     em {
+      font-style: normal;
+    }
+
+    code {
       font-style: normal;
     }
   }
@@ -239,12 +247,23 @@ body {
   --callout-content-padding: 0;
   --callout-content-background: transparent;
 
-  .callout {
+  .cm-callout .markdown-rendered .callout {
     padding: 0 0 0 1.75ch;
     background-color: transparent;
     color: rgb(var(--callout-color));
 
     .callout-content {
+      font-variation-settings: "wght" var(--font-normal);
+      font-weight: var(--font-normal);
+      overflow-wrap: break-word;
+
+      &>* {
+        margin: var(--line-height-normal) 0;
+      }
+
+      &>*:last-child {
+        margin-bottom: 0;
+      }
 
       strong,
       strong em {
@@ -257,12 +276,36 @@ body {
         padding: 0;
       }
 
-      &>* {
-        margin: var(--line-height-normal) 0;
+      ul, ol {
+        li::marker {
+          color: inherit;
+        }
       }
 
-      &>*:last-child {
-        margin-bottom: 0;
+      ul>li {
+        --list-indent: 2ch;
+
+        &::marker {
+          content: "• ";
+          font-variation-settings: "wght" var(--font-bold);
+          font-weight: var(--font-bold);
+        }
+
+        &>ul>li {
+          --list-indent: 4ch;
+        }
+      }
+
+      ol {
+        list-style-position: inside;
+
+        li {
+          --list-indent: 0;
+
+          &>ol>li {
+            --list-indent: 4ch;
+          }
+        }
       }
     }
 
@@ -278,13 +321,11 @@ body {
         width: 2ch;
         stroke-width: 2.5px;
       }
-
     }
   }
 }
 
-.markdown-preview-view,
-.markdown-rendered {
+.markdown-reading-view {
   --callout-border-width: 0 0 0 0.25ch;
   --callout-border-opacity: 1;
   --callout-padding: 0 0 0 2ch;
@@ -318,7 +359,6 @@ body {
         width: 2ch;
         stroke-width: 2.5px;
       }
-
     }
   }
 }/* contents/code.css */
@@ -337,6 +377,22 @@ body {
   --code-tag: #55b4d4;
   --code-value: #a37acc;
 }
+
+/* .theme-light {
+  --code-background: #242936;
+  --code-background-inline: #242936;
+  --code-normal: #cccac2;
+  --code-comment: #b8cfe688;
+  --code-function: #ffd173;
+  --code-important: #ffdfb3;
+  --code-keyword: #ffad66;
+  --code-operator: #f29e74;
+  --code-property: #73d0ff;
+  --code-punctuation: #cccac2;
+  --code-string: #d5ff80;
+  --code-tag: #5ccfe6;
+  --code-value: #dfbfff;
+} */
 
 .theme-dark {
   --code-background: #242936;
@@ -387,7 +443,7 @@ body {
   }
 }
 
-.markdown-preview-view {
+.markdown-reading-view {
   pre {
     position: relative;
     padding: 1.5ch;
@@ -396,7 +452,23 @@ body {
     border-radius: calc(var(--code-radius) * 2);
     white-space: var(--code-white-space);
     overflow-x: auto;
+
+    code {
+      background-color: transparent;
+      padding: 0;
+    }
   }
+
+  code {
+    background-color: var(--code-background-inline);
+  }
+}
+
+/* contents/comment.css */
+.markdown-source-view {
+    .cm-comment {
+        font-style: italic;
+    }
 }
 
 /* contents/emphasis.css */
@@ -416,7 +488,7 @@ body {
   }
 }
 
-.markdown-preview-view {
+.markdown-reading-view {
   strong {
     font-variation-settings: "wght" var(--font-bold);
     font-weight: var(--font-bold);
@@ -425,29 +497,32 @@ body {
 
 /* contents/footnote.css */
 .markdown-source-view {
-  & {
-    --footnote-size: var(--font-text-size);
-  }
+	& {
+		--footnote-size: var(--font-text-size);
+	}
 
-  span.cm-footref {
-    font-size: var(--footnote-size);
-    vertical-align: unset;
-    top: 0;
-  }
+	span.cm-footref,
+	span.cm-blockid {
+		font-size: var(--footnote-size);
+		vertical-align: unset;
+		top: 0;
+		margin: 0;
+	}
 
-  /* &.cm-s-obsidian .cm-line.HyperMD-footnote span.cm-hmd-footnote .cm-underline {
-    cursor: text;
-    display: inline-block;
-    font-size: var(--font-text-size);
-    position: relative;
-    top: 0;
-    color: var(--text-muted);
-  } */
+	span.cm-hmd-footnote {
+		font-size: var(--footnote-size);
+		top: 0;
+	}
+
+	.cm-line.HyperMD-footnote span.cm-hmd-footnote {
+		cursor: text;
+		display: inline-block;
+		font-size: var(--footnote-size);
+		position: relative;
+		top: 0;
+		color: var(--text-muted);
+	}
 }
-
-/* .markdown-preview-view {
-
-} */
 
 /* contents/heading.css */
 .markdown-source-view.mod-cm6 {
@@ -485,7 +560,7 @@ body {
   }
 }
 
-.markdown-preview-view {
+.markdown-reading-view {
   & {
     --h1-size: 2em;
     --h2-size: 1.75em;
@@ -539,10 +614,11 @@ body {
 
   .inline-title {
     font-variation-settings: "wght" var(--inline-title-weight);
+    letter-spacing: 0;
   }
 }
 
-.markdown-preview-view {
+.markdown-reading-view {
   & {
     --inline-title-color: var(--h1-color);
     --inline-title-font: var(--h1-font);
@@ -556,6 +632,7 @@ body {
 
   .inline-title {
     font-variation-settings: "wght" var(--inline-title-weight);
+    letter-spacing: 0;
   }
 }
 
@@ -597,7 +674,7 @@ body {
   }
 }
 
-.markdown-preview-view {
+.markdown-reading-view {
   & {
     --link-color: var(--text-accent);
     --link-color-hover: var(--text-accent-hover);
@@ -627,9 +704,66 @@ body {
       text-decoration-line: var(--link-decoration-hover);
     }
   }
+
+  .external-link {
+    background-position-y: 2px;
+  }
 }
 
-/* contents/paragraph.css */
+/* contents/list.css */
+.markdown-source-view {
+  & {
+    --list-indent: 2.25em;
+    --list-indent-editing: 0;
+    --list-indent-source: 0;
+    --list-spacing: 0;
+    --list-marker-color: var(--text-normal);
+    --list-marker-color-hover: var(--text-normal);
+    --list-marker-color-collapsed: var(--text-accent);
+    --list-bullet-border: none;
+    --list-bullet-radius: 50%;
+    --list-bullet-size: 0.3em;
+    --list-bullet-transform: none;
+    --list-numbered-style: decimal;
+    --list-bullet-end-padding: 0;
+  }
+
+  .list-bullet {
+    color: var(--list-marker-color);
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .HyperMD-list-line {
+    .cm-fold-indicator {
+      inset-inline-end: 2ch;
+    }
+  }
+}
+
+.markdown-reading-view {
+  & {
+    --list-indent: 2.25em;
+    --list-indent-editing: 0;
+    --list-indent-source: 0;
+    --list-spacing: 0;
+    --list-marker-color: var(--text-normal);
+    --list-marker-color-hover: var(--text-normal);
+    --list-marker-color-collapsed: var(--text-accent);
+    --list-bullet-border: none;
+    --list-bullet-radius: 50%;
+    --list-bullet-size: 0.3em;
+    --list-bullet-transform: none;
+    --list-numbered-style: decimal;
+    --list-bullet-end-padding: 0;
+  }
+
+  li::marker {
+    color: inherit;
+  }
+}/* contents/paragraph.css */
 .markdown-source-view {
   .cm-line {
     font-variation-settings: "wght" var(--font-normal);
@@ -637,7 +771,7 @@ body {
   }
 }
 
-.markdown-preview-view {
+.markdown-reading-view {
   p {
     font-variation-settings: "wght" var(--font-normal);
     font-weight: var(--font-normal);
@@ -651,9 +785,79 @@ body {
   }
 }
 
-.markdown-preview-view {
+.markdown-reading-view {
   table {
     width: 100%;
   }
 }
 
+/* plugins/pandoc-reference-list.css */
+.markdown-source-view {
+    & {
+        --citation-color: var(--color-cyan);
+    }
+
+    .pandoc-citation {
+        color: var(--citation-color);
+    }
+
+    .cm-pandoc-citation {
+        .cm-link:has(&) {
+            --link-external-color: var(--link-unresolved-color);
+            --link-external-color-hover: var(--link-unresolved-color);
+        }
+
+        .cm-link:has(&.is-resolved) {
+            --link-external-color: var(--citation-color);
+            --link-external-color-hover: var(--citation-color);
+        }
+
+        &.pandoc-citation {
+            color: inherit;
+        }
+    }
+}
+
+.markdown-reading-view {
+    & {
+        --citation-color: var(--color-cyan);
+    }
+    .pandoc-citation {
+        color: var(--citation-color);
+    }
+}
+
+
+.pwc-reference-list .csl-entry-wrapper:not(:last-child) {
+    border-bottom: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .HyperMD-quote .pandoc-citation.is-resolved {
+    font-weight: var(--font-semibold);
+    font-variation-settings: "wght" var(--font-semibold);
+} */
+
+/* blockquote .pandoc-citation.is-resolved {
+    font-weight: var(--font-semibold);
+    font-variation-settings: "wght" var(--font-semibold);
+    font-style: normal;
+} */
+
+/* right sidebar reference list */
+.pwc-reference-list .csl-entry-wrapper:not(:last-child) {
+    border-bottom: none;
+}

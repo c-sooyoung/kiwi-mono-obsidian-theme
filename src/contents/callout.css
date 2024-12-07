@@ -1,3 +1,4 @@
+/* content/callout.css */
 .markdown-source-view.mod-cm6 {
   --callout-border-width: 0 0 0 0.25ch;
   --callout-border-opacity: 1;
@@ -126,3 +127,4 @@
     }
   }
 }
+

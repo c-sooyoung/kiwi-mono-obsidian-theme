@@ -1,3 +1,4 @@
+/* contents/inline-title.css */
 .markdown-source-view.mod-cm6 {
   & {
     --inline-title-color: var(--h1-color);
