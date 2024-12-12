@@ -21,6 +21,10 @@
     &.cm-code, &.cm-inline-code {
       font-style: normal;
     }
+
+    &.cm-hmd-internal-link {
+      --link-decoration: underline;
+    }
   }
 
   .cm-active.HyperMD-quote::before {
@@ -47,6 +51,10 @@
 
     code {
       font-style: normal;
+    }
+
+    a {
+      --link-decoration: underline;
     }
   }
 }

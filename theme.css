@@ -4,7 +4,7 @@
     --font-monospace-theme: 'Cascadia Mono';
     font-feature-settings: "ss01";
     --font-text: var(--font-monospace);
-    --font-text-size: 1em;
+    /* --font-text-size: 1em; */
     --line-height-normal: 1.8em;
     --line-height-tight: 1.4em;
     --font-thin: 200;
@@ -51,9 +51,10 @@
 .markdown-reading-view {
   & {
     --font-text-theme: 'CMU Serif';
-    --font-text-size: 1em;
+    /* --font-text-size: 1em; */
     --line-height-normal: 1.8em;
     --line-height-tight: 1.4em;
+    --file-line-width: 90ch;
   }
 }
 
@@ -206,6 +207,10 @@ body {
     &.cm-code, &.cm-inline-code {
       font-style: normal;
     }
+
+    &.cm-hmd-internal-link {
+      --link-decoration: underline;
+    }
   }
 
   .cm-active.HyperMD-quote::before {
@@ -232,6 +237,10 @@ body {
 
     code {
       font-style: normal;
+    }
+
+    a {
+      --link-decoration: underline;
     }
   }
 }
@@ -533,7 +542,13 @@ body {
     --h3-weight: var(--h1-weight);
     --h4-weight: var(--h1-weight);
     --h5-weight: var(--h1-weight);
-    --h6-weight: var(--h1-weight);
+    --h6-weight: var(--font-semibold);
+    --h1-style: normal;
+    --h2-style: normal;
+    --h3-style: normal;
+    --h4-style: normal;
+    --h5-style: italic;
+    --h6-style: italic;
   }
 
   .cm-header {
@@ -552,8 +567,8 @@ body {
 .markdown-reading-view {
   & {
     --h1-size: 2em;
-    --h2-size: 1.75em;
-    --h3-size: 1.5em;
+    --h2-size: 1.5em;
+    --h3-size: 1.25em;
     --h4-size: var(--font-text-size);
     --h5-size: var(--font-text-size);
     --h6-size: var(--font-text-size);
@@ -568,7 +583,14 @@ body {
     --h3-weight: var(--h1-weight);
     --h4-weight: var(--h1-weight);
     --h5-weight: var(--h1-weight);
-    --h6-weight: var(--h1-weight);
+    --h6-weight: var(--font-semibold);
+    --h1-style: normal;
+    --h2-style: normal;
+    --h3-style: normal;
+    --h4-style: normal;
+    --h5-style: italic;
+    --h6-style: italic;
+
     --heading-spacing: 1em;
   }
 
@@ -584,7 +606,11 @@ body {
     }
   }
 
-  div:has(h3, h4, h5, h6) + div > p {
+  h1, h2 {
+    --heading-spacing: 2em;
+  }
+
+  div:has(h3, h4, h5, h6) + div > *, :is(h3, h4, h5, h6) + * {
     margin-top: 0;
   }
 }
@@ -599,12 +625,23 @@ body {
     --inline-title-style: var(--h1-style);
     --inline-title-variant: var(--h1-variant);
     --inline-title-weight: var(--h1-weight);
-    --inline-title-margin-bottom: 1em;
+    --inline-title-margin-bottom: var(--line-height-normal);
   }
 
   .inline-title {
     font-variation-settings: "wght" var(--inline-title-weight);
     letter-spacing: 0;
+
+    /* &::before {
+      content: "Title";
+      color: var(--text-faint);
+      margin: 0 3ch 0 -8ch;
+    } */
+
+    &::after {
+      content: ".md";
+      color: var(--text-faint);
+    }
   }
 }
 
@@ -617,7 +654,7 @@ body {
     --inline-title-style: var(--h1-style);
     --inline-title-variant: var(--h1-variant);
     --inline-title-weight: var(--h1-weight);
-    --inline-title-margin-bottom: 1em;
+    --inline-title-margin-bottom: var(--p-spacing);
   }
 
   .inline-title {

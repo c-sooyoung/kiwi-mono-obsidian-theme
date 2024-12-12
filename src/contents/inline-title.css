@@ -8,12 +8,23 @@
     --inline-title-style: var(--h1-style);
     --inline-title-variant: var(--h1-variant);
     --inline-title-weight: var(--h1-weight);
-    --inline-title-margin-bottom: 1em;
+    --inline-title-margin-bottom: var(--line-height-normal);
   }
 
   .inline-title {
     font-variation-settings: "wght" var(--inline-title-weight);
     letter-spacing: 0;
+
+    /* &::before {
+      content: "Title";
+      color: var(--text-faint);
+      margin: 0 3ch 0 -8ch;
+    } */
+
+    &::after {
+      content: ".md";
+      color: var(--text-faint);
+    }
   }
 }
 
@@ -26,7 +37,7 @@
     --inline-title-style: var(--h1-style);
     --inline-title-variant: var(--h1-variant);
     --inline-title-weight: var(--h1-weight);
-    --inline-title-margin-bottom: 1em;
+    --inline-title-margin-bottom: var(--p-spacing);
   }
 
   .inline-title {

@@ -18,7 +18,13 @@
     --h3-weight: var(--h1-weight);
     --h4-weight: var(--h1-weight);
     --h5-weight: var(--h1-weight);
-    --h6-weight: var(--h1-weight);
+    --h6-weight: var(--font-semibold);
+    --h1-style: normal;
+    --h2-style: normal;
+    --h3-style: normal;
+    --h4-style: normal;
+    --h5-style: italic;
+    --h6-style: italic;
   }
 
   .cm-header {
@@ -37,8 +43,8 @@
 .markdown-reading-view {
   & {
     --h1-size: 2em;
-    --h2-size: 1.75em;
-    --h3-size: 1.5em;
+    --h2-size: 1.5em;
+    --h3-size: 1.25em;
     --h4-size: var(--font-text-size);
     --h5-size: var(--font-text-size);
     --h6-size: var(--font-text-size);
@@ -53,7 +59,14 @@
     --h3-weight: var(--h1-weight);
     --h4-weight: var(--h1-weight);
     --h5-weight: var(--h1-weight);
-    --h6-weight: var(--h1-weight);
+    --h6-weight: var(--font-semibold);
+    --h1-style: normal;
+    --h2-style: normal;
+    --h3-style: normal;
+    --h4-style: normal;
+    --h5-style: italic;
+    --h6-style: italic;
+
     --heading-spacing: 1em;
   }
 
@@ -69,7 +82,11 @@
     }
   }
 
-  div:has(h3, h4, h5, h6) + div > p {
+  h1, h2 {
+    --heading-spacing: 2em;
+  }
+
+  div:has(h3, h4, h5, h6) + div > *, :is(h3, h4, h5, h6) + * {
     margin-top: 0;
   }
 }

@@ -4,7 +4,7 @@
     --font-monospace-theme: 'Cascadia Mono';
     font-feature-settings: "ss01";
     --font-text: var(--font-monospace);
-    --font-text-size: 1em;
+    /* --font-text-size: 1em; */
     --line-height-normal: 1.8em;
     --line-height-tight: 1.4em;
     --font-thin: 200;
@@ -51,9 +51,10 @@
 .markdown-reading-view {
   & {
     --font-text-theme: 'CMU Serif';
-    --font-text-size: 1em;
+    /* --font-text-size: 1em; */
     --line-height-normal: 1.8em;
     --line-height-tight: 1.4em;
+    --file-line-width: 90ch;
   }
 }
 
