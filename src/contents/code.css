@@ -65,6 +65,11 @@
 }
 
 .markdown-reading-view {
+
+  & {
+    --code-size: var(--font-smallest);
+  }
+
   pre {
     position: relative;
     padding: 1.5ch;
