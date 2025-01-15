@@ -54,14 +54,14 @@
     /* --font-text-size: 1em; */
     --line-height-normal: 1.8em;
     --line-height-tight: 1.4em;
-    --font-thin: 200;
-    --font-extralight: 240;
-    --font-light: 280;
-    --font-normal: 330;
-    --font-semibold: 500;
-    --font-bold: 600;
-    --font-extrabold: 650;
-    --font-black: 700;
+    /* --font-thin: 200; */
+    /* --font-extralight: 240; */
+    /* --font-light: 280; */
+    /* --font-normal: 330; */
+    /* --font-semibold: 500; */
+    /* --font-bold: 600; */
+    /* --font-extrabold: 650; */
+    /* --font-black: 700; */
     --file-line-width: 90ch;
   }
 
