@@ -4,7 +4,7 @@
     --font-monospace-theme: 'Cascadia Mono';
     font-feature-settings: "ss01";
     --font-text: var(--font-monospace);
-    /* --font-text-size: calc(0.75 * var(--font-text-size)); */
+    --font-text-size: calc(0.75 * var(--font-text-size));
     --line-height-normal: 1.8em;
     --line-height-tight: 1.4em;
     --font-thin: 200;
@@ -26,7 +26,7 @@
     font-size: var(--font-text-size);
     margin: 0 2ch 0 -20ch;
     padding: 0;
-    color: var(--color-base-30);
+    /* color: var(--color-base-30); */
 
     .cm-active {
       color: var(--background-primary);
