@@ -4,7 +4,7 @@
     --font-monospace-theme: 'Cascadia Mono';
     font-feature-settings: "ss01";
     --font-text: var(--font-monospace);
-    --font-text-size: calc(0.75 * var(--font-text-size));
+    /* --font-text-size: calc(0.75 * var(--font-text-size)); */
     --line-height-normal: 1.8em;
     --line-height-tight: 1.4em;
     --font-thin: 200;
@@ -51,6 +51,9 @@
 .markdown-reading-view {
   & {
     --font-text-theme: 'Inter Variable';
+    font-feature-settings: "ss02";
+
+    --font-text: var(--font-text-override), var(--font-text-theme), var(--font-default);
     /* --font-text-size: 1em; */
     --line-height-normal: 1.8em;
     --line-height-tight: 1.4em;
@@ -64,11 +67,6 @@
     /* --font-black: 700; */
     --file-line-width: 90ch;
   }
-
-  font-variation-settings: "wght" var(--font-normal);
-  font-weight: var(--font-normal);
-
-  font-feature-settings: "ss02";
 }
 
 /* window.css */
@@ -168,9 +166,9 @@ body {
 .theme-dark {
   --background-primary: #111;
   --background-primary-alt: #222;
-  --text-normal: #bbb;
-  --text-muted: #888;
-  --text-faint: #666;
+  --text-normal: #aaa;
+  --text-muted: #777;
+  --text-faint: #555;
 
   --accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
   --accent-shade-1: color-mix(in lch, var(--accent), hsl(var(--accent-h), var(--accent-s), 95%) 30%);
@@ -195,6 +193,10 @@ body {
   }
 
   .cm-quote {
+    & {
+      font-style: var(--blockquote-font-style);
+    }
+    
     &.cm-em {
       font-style: normal;
     }
@@ -414,6 +416,7 @@ body {
   }
 
   .cm-inline-code {
+    color: var(--code-value);
     background-color: var(--code-background-inline);
     padding: 0;
 
@@ -456,12 +459,14 @@ body {
     overflow-x: auto;
 
     code {
+      color: var(--code-normal);
       background-color: transparent;
       padding: 0;
     }
   }
 
   code {
+    color: var(--code-value);
     background-color: var(--code-background-inline);
   }
 }

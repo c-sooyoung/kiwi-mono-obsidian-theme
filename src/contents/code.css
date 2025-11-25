@@ -38,6 +38,7 @@
   }
 
   .cm-inline-code {
+    color: var(--code-value);
     background-color: var(--code-background-inline);
     padding: 0;
 
@@ -80,12 +81,14 @@
     overflow-x: auto;
 
     code {
+      color: var(--code-normal);
       background-color: transparent;
       padding: 0;
     }
   }
 
   code {
+    color: var(--code-value);
     background-color: var(--code-background-inline);
   }
 }

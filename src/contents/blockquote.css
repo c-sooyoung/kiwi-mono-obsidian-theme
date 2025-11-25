@@ -10,6 +10,10 @@
   }
 
   .cm-quote {
+    & {
+      font-style: var(--blockquote-font-style);
+    }
+    
     &.cm-em {
       font-style: normal;
     }

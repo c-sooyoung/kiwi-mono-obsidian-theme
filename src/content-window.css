@@ -4,7 +4,7 @@
     --font-monospace-theme: 'Cascadia Mono';
     font-feature-settings: "ss01";
     --font-text: var(--font-monospace);
-    --font-text-size: calc(0.75 * var(--font-text-size));
+    /* --font-text-size: calc(0.75 * var(--font-text-size)); */
     --line-height-normal: 1.8em;
     --line-height-tight: 1.4em;
     --font-thin: 200;
@@ -51,6 +51,9 @@
 .markdown-reading-view {
   & {
     --font-text-theme: 'Inter Variable';
+    font-feature-settings: "ss02";
+
+    --font-text: var(--font-text-override), var(--font-text-theme), var(--font-default);
     /* --font-text-size: 1em; */
     --line-height-normal: 1.8em;
     --line-height-tight: 1.4em;
@@ -64,10 +67,5 @@
     /* --font-black: 700; */
     --file-line-width: 90ch;
   }
-
-  font-variation-settings: "wght" var(--font-normal);
-  font-weight: var(--font-normal);
-
-  font-feature-settings: "ss02";
 }
 
