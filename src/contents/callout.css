@@ -15,7 +15,7 @@
   .cm-callout .markdown-rendered .callout {
     padding: 0 0 0 1.75ch;
     background-color: transparent;
-    color: rgb(var(--callout-color));
+    color: var(--callout-color);
 
     .callout-content {
       font-variation-settings: "wght" var(--font-normal);
@@ -106,7 +106,7 @@
   .callout {
     padding: 0 0 0 1.75ch;
     background-color: transparent;
-    color: rgb(var(--callout-color));
+    color: var(--callout-color);
 
     .callout-content>*:last-child {
       margin-bottom: 0;
